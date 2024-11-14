@@ -5,7 +5,7 @@ import nodemailer from "nodemailer";
 
 export async function POST(req: Request) {
   try {
-    const { name, email, message } = await req.json();
+    const { name, email, message, phoneNumber, company } = await req.json();
 
     if (!name || !email || !message) {
       return NextResponse.json(
@@ -17,16 +17,27 @@ export async function POST(req: Request) {
     const transporter = nodemailer.createTransport({
       service: "gmail",
       auth: {
-        user: "andrei.pata@pddle.app",
-        pass: "ixzdiyquegffdykq",
+        user: "contact@imeravisual.ro",
+        pass: "hbzmkysypizvqpkp",
       },
     });
 
     const mailOptions = {
-      from: "andrei.pata@pddle.app",
-      to: "andrei.pata@cleancodeculture.com",
-      subject: "New contact request on your website",
-      text: `You have a new contact request: ${email} - ${name} - ${message}`,
+      from: "contact@imeravisual.ro",
+      to: "contact@imeravisual.ro",
+      subject: `New contact request from - ${name}`,
+      text: `You have received a new contact request:
+    
+    Name: ${name}
+    Email: ${email}
+    Phone Number: ${phoneNumber}
+    Company: ${company}
+    
+    Message:
+    ${message}
+    
+    Trăiască Jumerile 🚀,
+    Jumară Productions Landing Page Contact Form`,
     };
 
     await transporter.sendMail(mailOptions);
