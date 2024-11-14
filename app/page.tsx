@@ -86,11 +86,11 @@ export default function LandingPage() {
   ]
 
   const workingProcess = [
-    { step: "PASUL 1", title: "Descoperire", description: "Explorăm obiectivele și publicul țintă pentru a alinia viziunea clientului cu strategia noastră.", icon: Telescope },
-    { step: "PASUL 2", title: "Planificare", description: "Creăm un plan detaliat și un storyboard care conturează vizual povestea.", icon: Lightbulb },
-    { step: "PASUL 3", title: "Filmare", description: "Capturăm imagini de înaltă calitate, reflectând stilul și mesajul dorit.", icon: Video },
-    { step: "PASUL 4", title: "Editare", description: "Montăm materialul brut, adăugăm efecte și ajustăm culorile pentru un impact vizual maxim.", icon: Cog },
-    { step: "PASUL 5", title: "Lansare", description: "Implementăm feedback-ul clientului și pregătim produsul final pentru lansare.", icon: Rocket },
+    { step: "PASUL 1", title: "STRATEGIE", description: "După ce aflăm ce nevoi ai și cine este publicul tău țintă, facem o strategie de conținut video personalizată pentru tine și brandul tău, cu piloni de comunicare, tone of voice și recomandări pentru fiecare platformă în parte.", icon: Telescope },
+    { step: "PASUL 2", title: "IDEI & SCRIPT", description: "Pe baza strategiei, facem o listă de idei care să te ajute să ajungi la cât mai mulți oameni din audiența ta. Iar după ce le alegem împreună pe cele mai bune, colegii noștri vor scrie niște script-uri beton, care să vorbească pe limba audienței tale.", icon: Lightbulb },
+    { step: "PASUL 3", title: "PRODUCȚIE", description: "Pentru că avem totul pregătit dinainte, ziua de filmare este, de obicei, cea mai fun. Noi venim cu camere, lumini, microfoane, tu trebuie să vii doar cu un vibe bun și cu dorința de a da cât mai bine pe (micul) ecran.", icon: Video },
+    { step: "PASUL 4", title: "EDITARE", description: "Acum că am terminat treaba de pe “teren”, e momentul ca ai noștri colegi de la editare să-și pună amprenta pe ce am filmat. Tranziții, efecte, sunete, colorizare, toate vor fi puse la locul potrivit ca videoclipurile tale să-i facă pe oameni să stea lipiți de ecrane.", icon: Film },
+    { step: "PASUL 5", title: "POSTARE", description: "Punctul final al muncii pe care o facem împreună vine atunci când le arătăm și celorlalți ce am făcut. Și ca să nu te preocupi tu să răspunzi la toate comentariile și să fii copleșit de like-uri, facem noi și asta pentru tine ;). Iar apoi o luăm de la capăt.", icon: Rocket },
   ];
 
   return (
@@ -144,7 +144,7 @@ export default function LandingPage() {
             muted
             playsInline
           >
-            <source src="/heroSectionVideo.mp4" type="video/mp4" />
+            <source src="/heroVideo.mp4" type="video/mp4" />
             Your browser does not support the video tag.
           </video>
         </section>
@@ -159,8 +159,8 @@ export default function LandingPage() {
         {/* BANDA TAGLINE */}
         <section className={`bg-[${colors.navy}] text-[${colors.white}] py-16`}>
           <div className="container mx-auto px-4">
-            <h3 className="text-2xl md:text-3xl font-bold mb-4 font-monumentRegular">
-              JUMARĂ PRODUCTIONS. <span className={`text-[${colors.red}]`}>CONTENT VIDEO AGENCY.</span>
+            <h3 className={`text-2xl md:text-3xl font-bold mb-4 font-monumentRegular text-[${colors.red}]`}>
+              JUMARĂ PRODUCTIONS.
             </h3>
             <h2 className="text-4xl md:text-5xl lg:text-6xl font-extrabold">
               PRODUCȚIE VIDEO DE BUN GUST.

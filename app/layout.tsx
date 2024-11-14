@@ -15,7 +15,7 @@ const geistMono = localFont({
 
 export const metadata: Metadata = {
   title: "Jumară Productions",
-  description: "Jumară Productions is a full-service video production company.",
+  description: "Producție video de bun gust.",
 };
 
 export default function RootLayout({
