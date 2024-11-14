@@ -189,7 +189,7 @@ export default function Component() {
     { step: "PASUL 5", title: "POSTARE", description: "Punctul final al muncii pe care o facem împreună vine atunci când le arătăm și celorlalți ce am făcut. Și ca să nu te preocupi tu să răspunzi la toate comentariile și să fii copleșit de like-uri, facem noi și asta pentru tine ;). Iar apoi o luăm de la capăt.", icon: Rocket },
   ];
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = async () => {
 
     const response = await fetch("/api/contact", {
       method: "POST",
@@ -199,7 +199,6 @@ export default function Component() {
       body: JSON.stringify({ name, email, message, phoneNumber, company }),
     });
 
-    const data = await response.json();
     if (response.ok) {
       setSnackbar({ message: 'Message sent successfully!', type: 'success' });
       setName('');
@@ -465,7 +464,7 @@ export default function Component() {
                     <label htmlFor="message" className="block text-[#061425] font-semibold mb-2">CUM TE PUTEM AJUTA?</label>
                     <textarea id="message" name="message" value={message}
                       onChange={(e) => setMessage(e.target.value)}
-                      required rows={6} className="w-full px-3 py-3 text-[#061425] bg-gray-100 rounded-3xl focus:outline-none focus:ring-2 focus:ring-[#e05e3d]" placeholder="Producție video pentru companie software..." required></textarea>
+                      required rows={6} className="w-full px-3 py-3 text-[#061425] bg-gray-100 rounded-3xl focus:outline-none focus:ring-2 focus:ring-[#e05e3d]" placeholder="Producție video pentru companie software..."></textarea>
                   </div>
                   <button type="submit" className="bg-[#e05e3d] text-white px-6 py-3 rounded-full font-bold hover:bg-opacity-90 transition duration-300">Trimite mesajul</button>
                 </form>
