@@ -23,6 +23,7 @@ const config: Config = {
           "sans-serif",
         ],
         archivo: ["Archivo", "sans-serif"],
+        sans: ["Archivo", "sans-serif"],
       },
       colors: {
         background: "var(--background)",

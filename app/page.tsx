@@ -42,7 +42,7 @@ export default function LandingPage() {
 
   const colors = {
     orange: '#cb7536',
-    navy: '#34353a',
+    navy: '#061425',
     white: '#efddc5',
     black: '#061425',
     red: '#e05e3d'
@@ -95,10 +95,10 @@ export default function LandingPage() {
 
   return (
     <div className="min-h-screen flex flex-col relative bg-[#061425]">
-      <header className="bg-transparent absolute top-0 left-0 right-0 z-50 sticky">
+      <header className="bg-[#061425] absolute top-0 left-0 right-0 z-50 sticky">
         <div className="container mx-auto px-4 py-4 flex items-center justify-between max-h-[70px]">
           <Link href="/" className="flex items-center space-x-2">
-            <Image src="/logo.png" alt="Jumară Productions Logo" width={80} height={40} />
+            <Image src="/logoWhite.png" alt="Jumară Productions Logo" width={80} height={40} />
           </Link>
           <nav className="hidden md:flex items-center space-x-8 h-full py-2">
             <button onClick={scrollToTop} className={`text-[${colors.white}] hover:text-[${colors.red}] font-bold flex items-center h-full relative group ${pathname === '/' ? `text-[${colors.red}]` : ''}`}>
@@ -126,18 +126,17 @@ export default function LandingPage() {
         </div>
         {isMenuOpen && (
           <div className="md:hidden bg-[#061425] bg-opacity-70">
-            <Link href="/" className={`block py-2 px-4 text-sm font-bold text-[${colors.white}] hover:bg-gray-800`}>ACASĂ</Link>
-            <Link href="/about" className={`block py-2 px-4 text-sm font-bold text-[${colors.white}] hover:bg-gray-800`}>DESPRE NOI</Link>
-            <Link href="/services" className={`block py-2 px-4 text-sm font-bold text-[${colors.white}] hover:bg-gray-800`}>SERVICII</Link>
-            <Link href="/work" className={`block py-2 px-4 text-sm font-bold text-[${colors.white}] hover:bg-gray-800`}>CUM LUCRĂM</Link>
-            <Link href="/contact" className={`block py-2 px-4 text-sm bg-[${colors.red}] text-[${colors.white}] hover:bg-opacity-90`}>CONTACT</Link>
+            <button onClick={scrollToTop} className={`block py-2 px-4 text-sm font-bold text-[${colors.white}] hover:bg-gray-800 w-full text-left`}>ACASĂ</button>
+            <button onClick={scrollToAboutUs} className={`block py-2 px-4 text-sm font-bold text-[${colors.white}] hover:bg-gray-800 w-full text-left`}>DESPRE NOI</button>
+            <button onClick={scrollToHowWeWork} className={`block py-2 px-4 text-sm font-bold text-[${colors.white}] hover:bg-gray-800 w-full text-left`}>CUM LUCRĂM</button>
+            <button onClick={scrollToContact} className={`block py-2 px-4 text-sm bg-[${colors.red}] text-[${colors.white}] hover:bg-opacity-90 w-full text-left`}>CONTACT</button>
           </div>
         )}
       </header>
 
       <main className="flex-grow z-10 relative">
         {/* HERO SECTION */}
-        <section className="relative h-screen" style={{ marginTop: "-70px" }}>
+        <section className="relative h-screen" style={{ marginBottom: "-70px" }}>
           <video
             className="absolute top-0 left-0 w-full h-full object-cover"
             autoPlay
@@ -145,15 +144,20 @@ export default function LandingPage() {
             muted
             playsInline
           >
-            <source src="/heroVideo.mp4" type="video/mp4" />
+            <source src="/heroSectionVideo.mp4" type="video/mp4" />
             Your browser does not support the video tag.
           </video>
-
         </section>
 
+        {/* Transition element after hero section */}
+        <div className="relative h-24 overflow-hidden">
+          <svg viewBox="0 0 500 150" preserveAspectRatio="none" className="h-full w-full">
+            <path d="M0,150 L0,40 Q250,80 500,40 L500,150 Z" fill={colors.navy} />
+          </svg>
+        </div>
 
         {/* BANDA TAGLINE */}
-        <section className={`bg-[#34353a] text-[${colors.white}] py-16`}>
+        <section className={`bg-[${colors.navy}] text-[${colors.white}] py-16`}>
           <div className="container mx-auto px-4">
             <h3 className="text-2xl md:text-3xl font-bold mb-4 font-monumentRegular">
               JUMARĂ PRODUCTIONS. <span className={`text-[${colors.red}]`}>CONTENT VIDEO AGENCY.</span>
@@ -165,15 +169,15 @@ export default function LandingPage() {
         </section>
 
         {/* STATS SECTION */}
-        <section ref={aboutUsRef} className="bg-[#34353a] py-16 relative overflow-hidden">
+        <section ref={aboutUsRef} className="bg-[#061425] py-16 relative overflow-hidden">
           <div className="container mx-auto px-4">
             <div className="flex flex-wrap justify-center items-stretch -mx-4">
               <div className="w-full sm:w-1/3 px-4 mb-8 sm:mb-0">
                 <div className={`h-full bg-[${colors.navy}] rounded-lg p-8 text-center relative overflow-hidden transition-all duration-300 transform hover:scale-105 hover:shadow-xl`}>
                   <div className="relative z-10">
                     <Eye className={`w-16 h-16 mx-auto mb-4 text-[${colors.red}]`} />
-                    <h3 className={`text-4xl font-bold text-[${colors.white}] mb-2`}>+50 milioane</h3>
-                    <p className={`text-xl text-[${colors.white}]`}>de vizualizări</p>
+                    <h3 className={`text-4xl font-bold text-[${colors.white}] mb-2`}>50+ milioane</h3>
+                    <p className={`text-xl text-[${colors.white}]`}>vizualizări</p>
                   </div>
                   <div className={`absolute top-0 left-0 w-full h-1 bg-[${colors.red}]`}></div>
                 </div>
@@ -182,7 +186,7 @@ export default function LandingPage() {
                 <div className={`h-full bg-[${colors.navy}] rounded-lg p-8 text-center relative overflow-hidden transition-all duration-300 transform hover:scale-105 hover:shadow-xl`}>
                   <div className="relative z-10">
                     <Film className={`w-16 h-16 mx-auto mb-4 text-[${colors.red}]`} />
-                    <h3 className={`text-4xl font-bold text-[${colors.white}] mb-2`}>+1000</h3>
+                    <h3 className={`text-4xl font-bold text-[${colors.white}] mb-2`}>1000+</h3>
                     <p className={`text-xl text-[${colors.white}]`}>videoclipuri realizate</p>
                   </div>
                   <div className={`absolute top-0 left-0 w-full h-1 bg-[${colors.red}]`}></div>
@@ -192,8 +196,8 @@ export default function LandingPage() {
                 <div className={`h-full bg-[${colors.navy}] rounded-lg p-8 text-center relative overflow-hidden transition-all duration-300 transform hover:scale-105 hover:shadow-xl`}>
                   <div className="relative z-10">
                     <Users className={`w-16 h-16 mx-auto mb-4 text-[${colors.red}]`} />
-                    <h3 className={`text-4xl font-bold text-[${colors.white}] mb-2`}>+30</h3>
-                    <p className={`text-xl text-[${colors.white}]`}>de branduri</p>
+                    <h3 className={`text-4xl font-bold text-[${colors.white}] mb-2`}>30+</h3>
+                    <p className={`text-xl text-[${colors.white}]`}>branduri</p>
                   </div>
                   <div className={`absolute top-0 left-0 w-full h-1 bg-[${colors.red}]`}></div>
                 </div>
@@ -202,6 +206,13 @@ export default function LandingPage() {
           </div>
           <div className={`absolute bottom-0 right-0 w-1/2 h-1/2 bg-[${colors.red}] rounded-tl-full opacity-5 transform rotate-45`}></div>
         </section>
+
+        {/* Transition element  */}
+        <div className="relative h-24 overflow-hidden bg-[#061425]">
+          <svg viewBox="0 0 500 150" preserveAspectRatio="none" className="h-full w-full">
+            <path d="M0,150 L0,100 Q250,0 500,100 L500,150 Z" fill="white" />
+          </svg>
+        </div>
 
         {/* CLIENTI */}
         <section ref={clientsRef} className="py-16 bg-white pt-40">
@@ -233,8 +244,15 @@ export default function LandingPage() {
           </div>
         </section>
 
+        {/* Transition element  */}
+        <div className="relative h-24 overflow-hidden bg-[#061425]">
+          <svg viewBox="0 0 500 150" preserveAspectRatio="none" className="h-full w-full">
+            <path d="M0,0 L0,50 Q250,150 500,50 L500,0 Z" fill="white" />
+          </svg>
+        </div>
+
         {/* CUM LUCRAM */}
-        <section ref={howWeWorkRef} id="howWeWork" className="w-full bg-[#34353a] py-20" >
+        <section ref={howWeWorkRef} id="howWeWork" className="w-full bg-[#061425] py-20" >
           <div className="container mx-auto px-8">
             <div className="text-center mb-12">
               <h2 className="text-lg text-[#e05e3d] mb-4 select-none">CUM FUNCȚIONEAZĂ</h2>
@@ -266,6 +284,16 @@ export default function LandingPage() {
           </div>
         </section>
 
+
+
+
+        {/* Transition element  */}
+        <div className="relative h-24 overflow-hidden bg-white">
+          <svg viewBox="0 0 500 150" preserveAspectRatio="none" className="h-full w-full">
+            <path d="M0,0 L0,100 Q250,150 500,100 L500,0 Z" fill={colors.navy} />
+          </svg>
+        </div>
+
         {/* CONTACT SECTION */}
         <section ref={contactRef} className="bg-white py-16 relative overflow-hidden">
           <div className="container mx-auto px-4">
@@ -278,7 +306,7 @@ export default function LandingPage() {
                 </div>
                 <div className="mb-6">
                   <h3 className="text-xl font-semibold text-[#061425] mb-2">EMAIL</h3>
-                  <p className="text-[#061425]">hello@jumaraproductions.ro</p>
+                  <p className="text-[#061425]">contact@imeravisual.ro</p>
                 </div>
                 <div className="mb-6">
                   <h3 className="text-xl font-semibold text-[#061425] mb-2">ADRESA</h3>
@@ -323,14 +351,14 @@ export default function LandingPage() {
         </section>
       </main>
 
-      <footer className="bg-[#34353a] text-white py-8 relative">
+      <footer className="bg-[#061425] text-white py-8 relative">
         <div className="container mx-auto px-4">
           <div className="z-10 absolute top-0 right-0 w-1/3 h-1/3 bg-[#e05e3d] rounded-tl-full opacity-20 transform rotate-180 scale-x-[-1]"></div>
           <div className="flex flex-col md:flex-row justify-between items-start mb-8">
             <div className="mb-6 md:mb-0">
               <Image src="/logoWhite.png" alt="Jumară Productions Logo" width={120} height={60} className="mb-4" />
-              <p className="max-w-md text-sm font-bold">
-                Transformăm idei în producții video de bun gust, aducând viziunea ta la viață pe ecran. Soluții creative pentru a amplifica prezența ta online.
+              <p className="max-w-md text-xl font-bold">
+                Producție video de bun gust.
               </p>
             </div>
             <nav className="flex flex-wrap gap-4 md:gap-8 z-20">
