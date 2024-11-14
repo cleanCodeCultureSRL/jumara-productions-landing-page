@@ -355,7 +355,7 @@ export default function Component() {
                     alt={logo.name}
                     width={120}
                     height={60}
-                    className="max-w-full h-auto filter grayscale"
+                    className="max-w-full h-auto filter"
                   />
                 </div>
               ))}
