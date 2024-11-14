@@ -18,6 +18,24 @@ export default function LandingPage() {
   const [isVisible, setIsVisible] = useState(false)
   const clientsRef = useRef(null)
 
+  const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= 768);
+    };
+
+    // Run immediately on mount
+    handleResize();
+
+    // Attach resize event listener
+    window.addEventListener('resize', handleResize);
+
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
+
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
@@ -67,22 +85,23 @@ export default function LandingPage() {
   const closeSnackbar = () => setSnackbar(null)
 
   const logos = [
-    { name: 'ADNV', src: "/logos/adnv.png" },
-    { name: 'Bakery School', src: "/logos/bakeryschool.png" },
-    { name: 'BISM', src: "/logos/bism.png" },
-    { name: 'Createrra', src: "/logos/createrra.png" },
     { name: 'Decathlon', src: "/logos/decathlon.png" },
-    { name: 'Exavet', src: "/logos/exavet.png" },
-    { name: 'FMS', src: "/logos/fms.png" },
-    { name: 'I Love Failure', src: "/logos/ilovefailure.png" },
-    { name: "Jerry's Pizza", src: "/logos/jerryspizza.png" },
-    { name: 'Kinetic', src: "/logos/kinetic.png" },
-    { name: 'Micul Fermier', src: "/logos/miculfermier.png" },
-    { name: 'Pilot', src: "/logos/pilot.png" },
+    { name: 'lensa', src: "/logos/lensa.png" },
     { name: 'Regina Maria', src: "/logos/reginamaria.png" },
+    { name: "Jerry's Pizza", src: "/logos/jerryspizza.png" },
+    { name: 'Pilot', src: "/logos/pilot.png" },
     { name: 'Salvati Copii', src: "/logos/salvaticopii.png" },
-    { name: 'SOLO', src: "/logos/solo.png" },
+    { name: 'I Love Failure', src: "/logos/ilovefailure.png" },
+    { name: 'Kinetic', src: "/logos/kinetic.png" },
+    { name: 'Exavet', src: "/logos/exavet.png" },
+    { name: 'BISM', src: "/logos/bism.png" },
     { name: 'ZAVATE', src: "/logos/zavate.png" },
+    { name: 'Micul Fermier', src: "/logos/miculfermier.png" },
+    { name: 'ADNV', src: "/logos/adnv.png" },
+    { name: 'Createrra', src: "/logos/createrra.png" },
+    { name: 'Bakery School', src: "/logos/bakeryschool.png" },
+    { name: 'FMS', src: "/logos/fms.png" },
+    { name: 'SOLO', src: "/logos/solo.png" },
   ]
 
   const workingProcess = [
@@ -134,6 +153,8 @@ export default function LandingPage() {
         )}
       </header>
 
+      {console.log({ isMobile })}
+
       <main className="flex-grow z-10 relative">
         {/* HERO SECTION */}
         <section className="relative h-screen" style={{ marginBottom: "-70px" }}>
@@ -144,7 +165,7 @@ export default function LandingPage() {
             muted
             playsInline
           >
-            <source src="/heroVideo.mp4" type="video/mp4" />
+            <source src={isMobile ? "/heroVideoMobile.mp4" : "/heroVideo.mp4"} type="video/mp4" />
             Your browser does not support the video tag.
           </video>
         </section>
@@ -361,13 +382,13 @@ export default function LandingPage() {
                 Producție video de bun gust.
               </p>
             </div>
-            <nav className="flex flex-wrap gap-4 md:gap-8 z-20">
+            {/* <nav className="flex flex-wrap gap-4 md:gap-8 z-20">
               <Link href="/" className="hover:text-[#e05e3d] transition-colors font-bold z-20">ACASĂ</Link>
               <Link href="/projects" className="hover:text-[#e05e3d] transition-colors font-bold z-20">PROIECTE</Link>
               <Link href="/pricing" className="hover:text-[#e05e3d] transition-colors font-bold z-20">PREȚURI</Link>
               <Link href="/about" className="hover:text-[#e05e3d] transition-colors font-bold z-20">DESPRE NOI</Link>
               <Link href="/contact" className="hover:text-[#e05e3d] transition-colors font-bold z-20">CONTACT</Link>
-            </nav>
+            </nav> */}
           </div>
           <div className="flex flex-col md:flex-row justify-between items-center pt-4 border-t border-gray-700 font-bold">
             <p className="text-sm mb-4 md:mb-0">
