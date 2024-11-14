@@ -1,6 +1,22 @@
+@import url("https://fonts.googleapis.com/css2?family=Archivo:wght@400;700&display=swap");
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@font-face {
+  font-family: "MonumentExtendedRegular";
+  src: url("/fonts/MonumentExtendedRegular.oft") format("opentype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "MonumentExtendedUltrabold";
+  src: url("/fonts/MonumentExtendedUltrabold.oft") format("opentype");
+  font-weight: bold;
+  font-style: normal;
+}
 
 body {
   font-family: Arial, Helvetica, sans-serif;
