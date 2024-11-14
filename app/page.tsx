@@ -179,9 +179,14 @@ export default function Component() {
     { name: 'Micul Fermier', src: "/logos/miculfermier.png" },
     { name: 'ADNV', src: "/logos/adnv.png" },
     { name: 'Createrra', src: "/logos/createrra.png" },
+    { name: 'BusinessPeople', src: "/logos/businessPeople.png" },
+    { name: 'energyPal', src: "/logos/energyPal.png" },
     { name: 'Bakery School', src: "/logos/bakeryschool.png" },
+    { name: '11th', src: "/logos/11th.png" },
+    { name: 'pddle', src: "/logos/pddle.png" },
     { name: 'FMS', src: "/logos/fms.png" },
     { name: 'SOLO', src: "/logos/solo.png" },
+    { name: 'esenzio', src: "/logos/esenzio.png" },
   ]
 
 
@@ -342,7 +347,7 @@ export default function Component() {
           <div className="container mx-auto px-4 mt-50" >
             <h2 className="text-3xl md:text-4xl font-bold mb-12 text-black text-center font-archivo">CLIENȚII NOȘTRII</h2>
             <p className="text-xl text-center text-gray-600 mb-8">
-              Lucrăm de la start-up-uri până la retaileri și branduri recunoscute la nivel global
+              De la start-up-uri până la retaileri și branduri recunoscute la nivel global
             </p>
             <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8">
               {logos.map((logo, index) => (
@@ -382,8 +387,8 @@ export default function Component() {
               <h3 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4 text-[#efddc5] select-none">
                 Procesul nostru de <span className="text-[#e05e3d]">producție</span>
               </h3>
-              <p className="max-w-2xl mx-auto text-[#efddc5] select-none">
-                Abordarea noastră metodică asigură livrarea de producții video de înaltă calitate, adaptate perfect nevoilor afacerii tale.
+              <p className="max-w-2xl mx-auto text-[#efddc5] select-none text-2xl">
+                5 pași simpli pentru un conținut video de succes
               </p>
             </div>
 
