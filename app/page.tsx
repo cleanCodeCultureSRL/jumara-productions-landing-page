@@ -144,18 +144,22 @@ export default function Component() {
 
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' })
+    setIsMenuOpen(false)
   }
 
   const scrollToAboutUs = () => {
     aboutUsRef.current?.scrollIntoView({ behavior: 'smooth' })
+    setIsMenuOpen(false)
   }
 
   const scrollToHowWeWork = () => {
     howWeWorkRef.current?.scrollIntoView({ behavior: 'smooth' })
+    setIsMenuOpen(false)
   }
 
   const scrollToContact = () => {
     contactRef.current?.scrollIntoView({ behavior: 'smooth' })
+    setIsMenuOpen(false)
   }
 
   const closeSnackbar = () => setSnackbar(null)
