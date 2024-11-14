@@ -1,6 +1,6 @@
 'use client'
 
-import { Cog, Eye, Facebook, Film, Instagram, Lightbulb, Rocket, Telescope, Users, Video } from 'lucide-react'
+import { Eye, Facebook, Film, Instagram, Lightbulb, Rocket, Telescope, Users, Video } from 'lucide-react'
 import Image from 'next/image'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
@@ -14,9 +14,32 @@ export default function LandingPage() {
   const aboutUsRef = useRef(null)
   const howWeWorkRef = useRef(null)
   const contactRef = useRef(null)
+  const videoRef = useRef(null)
+
 
   const [isVisible, setIsVisible] = useState(false)
   const clientsRef = useRef(null)
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth < 768)
+    }
+
+    // Initial check
+    handleResize()
+
+    // Update on resize
+    window.addEventListener('resize', handleResize)
+    return () => window.removeEventListener('resize', handleResize)
+  }, [])
+
+  useEffect(() => {
+    if (videoRef.current) {
+      videoRef.current.src = isMobile ? "/heroVideoMobile.mp4" : "/heroVideo.mp4"
+      videoRef.current.load()
+    }
+  }, [isMobile])
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -144,8 +167,9 @@ export default function LandingPage() {
             loop
             muted
             playsInline
+            ref={videoRef}
           >
-            <source src={window.innerWidth < 768 ? "/heroVideoMobile.mp4" : "/heroVideo.mp4"} type="video/mp4" />
+            <source src={isMobile ? "/heroVideoMobile.mp4" : "/heroVideo.mp4"} type="video/mp4" />
             Your browser does not support the video tag.
           </video>
         </section>
