@@ -18,24 +18,6 @@ export default function LandingPage() {
   const [isVisible, setIsVisible] = useState(false)
   const clientsRef = useRef(null)
 
-  const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
-
-  useEffect(() => {
-    const handleResize = () => {
-      setIsMobile(window.innerWidth <= 768);
-    };
-
-    // Run immediately on mount
-    handleResize();
-
-    // Attach resize event listener
-    window.addEventListener('resize', handleResize);
-
-    return () => {
-      window.removeEventListener('resize', handleResize);
-    };
-  }, []);
-
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
@@ -153,8 +135,6 @@ export default function LandingPage() {
         )}
       </header>
 
-      {console.log({ isMobile })}
-
       <main className="flex-grow z-10 relative">
         {/* HERO SECTION */}
         <section className="relative h-screen" style={{ marginBottom: "-70px" }}>
@@ -165,7 +145,7 @@ export default function LandingPage() {
             muted
             playsInline
           >
-            <source src={isMobile ? "/heroVideoMobile.mp4" : "/heroVideo.mp4"} type="video/mp4" />
+            <source src={window.innerWidth < 768 ? "/heroVideoMobile.mp4" : "/heroVideo.mp4"} type="video/mp4" />
             Your browser does not support the video tag.
           </video>
         </section>
