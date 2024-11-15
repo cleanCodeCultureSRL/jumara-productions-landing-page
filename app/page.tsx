@@ -169,7 +169,7 @@ export default function Component() {
 
   const colors = {
     orange: '#cb7536',
-    navy: '#34353a',
+    navy: '#061425',
     white: '#efddc5',
     black: '#061425',
     red: '#e05e3d'
@@ -321,7 +321,7 @@ export default function Component() {
         </div>
 
         {/* BANDA TAGLINE */}
-        <section className={`bg-[${colors.navy}] text-[${colors.white}] py-16  px-4`}>
+        <section className={`bg-[#061425] text-[${colors.white}] py-16  px-4`}>
           <div className="container mx-auto px-4">
             <h3 className={`text-2xl md:text-3xl font-bold mb-4 font-monumentRegular text-[${colors.red}]`}>
               JUMARĂ PRODUCTIONS.
