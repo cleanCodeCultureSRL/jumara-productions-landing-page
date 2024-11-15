@@ -1,6 +1,6 @@
 'use client'
 
-import { Eye, Facebook, Film, Heart, Instagram, Users } from 'lucide-react'
+import { Facebook, Heart, Instagram } from 'lucide-react'
 import Image from 'next/image'
 import Link from 'next/link'
 import { useState } from 'react'
