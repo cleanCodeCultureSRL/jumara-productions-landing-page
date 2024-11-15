@@ -21,8 +21,6 @@ export default function NotFound() {
     setIsMenuOpen(false);
   };
 
-
-
   // Close menu when clicking outside
   useEffect(() => {
     const handleClickOutside = (event) => {
@@ -43,10 +41,28 @@ export default function NotFound() {
 
   return (
     <div className="min-h-screen flex flex-col relative bg-[#34353a] overflow-hidden">
-      {/* Decorative shapes */}
+      {/* Existing decorative shapes */}
       <div className="absolute top-20 left-10 w-20 h-20 rounded-full bg-[#e05e3d] opacity-20 animate-pulse"></div>
       <div className="absolute top-40 right-20 w-32 h-32 rounded-full border-4 border-[#cb7536] opacity-20 animate-spin-slow"></div>
       <div className="absolute bottom-40 left-20 w-24 h-24 transform rotate-45 bg-[#efddc5] opacity-20 animate-bounce"></div>
+
+      {/* New decorative shapes */}
+      <div className="absolute top-1/4 left-1/3 w-16 h-16 bg-[#cb7536] opacity-10 animate-ping"></div>
+      <div className="absolute bottom-1/4 right-1/3 w-12 h-12 rounded-full border-2 border-[#efddc5] opacity-20 animate-pulse"></div>
+      <div className="absolute top-3/4 left-1/2 w-20 h-20 transform rotate-12 bg-[#e05e3d] opacity-15 animate-bounce"></div>
+
+      {/* SVG shapes */}
+      <svg className="absolute top-1/2 left-10" width="100" height="100" viewBox="0 0 100 100">
+        <circle cx="50" cy="50" r="40" stroke="#cb7536" strokeWidth="4" fill="none" opacity="0.1">
+          <animate attributeName="r" from="40" to="50" dur="4s" repeatCount="indefinite" />
+        </circle>
+      </svg>
+      <svg className="absolute bottom-10 right-10" width="120" height="120" viewBox="0 0 120 120">
+        <rect x="10" y="10" width="100" height="100" stroke="#e05e3d" strokeWidth="4" fill="none" opacity="0.1">
+          <animate attributeName="width" from="100" to="80" dur="3s" repeatCount="indefinite" />
+          <animate attributeName="height" from="100" to="80" dur="3s" repeatCount="indefinite" />
+        </rect>
+      </svg>
 
       <header className="bg-[#061425] absolute top-0 left-0 right-0 z-50 sticky">
         <div className="container mx-auto px-4 py-4 flex items-center justify-between max-h-[70px]">
@@ -78,7 +94,7 @@ export default function NotFound() {
           </button>
         </div>
         {isMenuOpen && (
-          <div className="menu-container  md:hidden bg-[#061425] bg-opacity-70">
+          <div className="menu-container md:hidden bg-[#061425] bg-opacity-70">
             <button onClick={() => navigateToSection('home')} className={`block py-2 px-4 text-sm font-bold text-[${colors.white}] hover:bg-gray-800 w-full text-left`}>ACASĂ</button>
             <button onClick={() => navigateToSection('aboutUs')} className={`block py-2 px-4 text-sm font-bold text-[${colors.white}] hover:bg-gray-800 w-full text-left`}>DESPRE NOI</button>
             <button onClick={() => navigateToSection('howWeWork')} className={`block py-2 px-4 text-sm font-bold text-[${colors.white}] hover:bg-gray-800 w-full text-left`}>CUM LUCRĂM</button>
@@ -102,7 +118,6 @@ export default function NotFound() {
           </Link>
         </div>
         <div className="absolute bottom-0 right-0 w-1/3 h-1/6 bg-[#e05e3d] rounded-tl-full opacity-20"></div>
-
       </main>
 
       <footer className="bg-[#061425] text-white py-8 relative">
