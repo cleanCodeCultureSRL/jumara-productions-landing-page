@@ -61,10 +61,10 @@ export default function NotFound() {
         </div>
         {isMenuOpen && (
           <div className="md:hidden bg-[#061425] bg-opacity-70">
-            <button onClick={scrollToTop} className={`block py-2 px-4 text-sm font-bold text-[${colors.white}] hover:bg-gray-800 w-full text-left`}>ACASĂ</button>
-            <button onClick={scrollToAboutUs} className={`block py-2 px-4 text-sm font-bold text-[${colors.white}] hover:bg-gray-800 w-full text-left`}>DESPRE NOI</button>
-            <button onClick={scrollToHowWeWork} className={`block py-2 px-4 text-sm font-bold text-[${colors.white}] hover:bg-gray-800 w-full text-left`}>CUM LUCRĂM</button>
-            <button onClick={scrollToContact} className={`block py-2 px-4 text-sm bg-[${colors.red}] text-[${colors.white}] hover:bg-opacity-90 w-full text-left`}>CONTACT</button>
+            <button onClick={() => navigateToSection('home')} className={`block py-2 px-4 text-sm font-bold text-[${colors.white}] hover:bg-gray-800 w-full text-left`}>ACASĂ</button>
+            <button onClick={() => navigateToSection('aboutUs')} className={`block py-2 px-4 text-sm font-bold text-[${colors.white}] hover:bg-gray-800 w-full text-left`}>DESPRE NOI</button>
+            <button onClick={() => navigateToSection('howWeWork')} className={`block py-2 px-4 text-sm font-bold text-[${colors.white}] hover:bg-gray-800 w-full text-left`}>CUM LUCRĂM</button>
+            <button onClick={() => navigateToSection('contact')} className={`block py-2 px-4 text-sm bg-[${colors.red}] text-[${colors.white}] hover:bg-opacity-90 w-full text-left`}>CONTACT</button>
           </div>
         )}
       </header>
