@@ -3,7 +3,7 @@
 import { Facebook, Heart, Instagram } from 'lucide-react'
 import Image from 'next/image'
 import Link from 'next/link'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 
 export default function NotFound() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
@@ -22,6 +22,24 @@ export default function NotFound() {
   };
 
 
+
+  // Close menu when clicking outside
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      const menuElement = document.querySelector('.menu-container');
+      if (menuElement && !menuElement.contains(event.target)) {
+        setIsMenuOpen(false);
+      }
+    };
+
+    if (isMenuOpen) {
+      document.addEventListener('click', handleClickOutside);
+    }
+
+    return () => {
+      document.removeEventListener('click', handleClickOutside);
+    };
+  }, [isMenuOpen]);
 
   return (
     <div className="min-h-screen flex flex-col relative bg-[#34353a] overflow-hidden">
@@ -60,7 +78,7 @@ export default function NotFound() {
           </button>
         </div>
         {isMenuOpen && (
-          <div className="md:hidden bg-[#061425] bg-opacity-70">
+          <div className="menu-container  md:hidden bg-[#061425] bg-opacity-70">
             <button onClick={() => navigateToSection('home')} className={`block py-2 px-4 text-sm font-bold text-[${colors.white}] hover:bg-gray-800 w-full text-left`}>ACASĂ</button>
             <button onClick={() => navigateToSection('aboutUs')} className={`block py-2 px-4 text-sm font-bold text-[${colors.white}] hover:bg-gray-800 w-full text-left`}>DESPRE NOI</button>
             <button onClick={() => navigateToSection('howWeWork')} className={`block py-2 px-4 text-sm font-bold text-[${colors.white}] hover:bg-gray-800 w-full text-left`}>CUM LUCRĂM</button>

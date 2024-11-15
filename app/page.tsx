@@ -148,6 +148,25 @@ export default function Component() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+
+  // Close menu when clicking outside
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      const menuElement = document.querySelector('.menu-container');
+      if (menuElement && !menuElement.contains(event.target)) {
+        setIsMenuOpen(false);
+      }
+    };
+
+    if (isMenuOpen) {
+      document.addEventListener('click', handleClickOutside);
+    }
+
+    return () => {
+      document.removeEventListener('click', handleClickOutside);
+    };
+  }, [isMenuOpen]);
+
   const colors = {
     orange: '#cb7536',
     navy: '#34353a',
@@ -269,7 +288,7 @@ export default function Component() {
           </button>
         </div>
         {isMenuOpen && (
-          <div className="md:hidden bg-[#061425] bg-opacity-70">
+          <div className="menu-container md:hidden bg-[#061425] bg-opacity-70">
             <button onClick={scrollToTop} className={`block py-2 px-4 text-sm font-bold text-[${colors.white}] hover:bg-gray-800 w-full text-left`}>ACASĂ</button>
             <button onClick={scrollToAboutUs} className={`block py-2 px-4 text-sm font-bold text-[${colors.white}] hover:bg-gray-800 w-full text-left`}>DESPRE NOI</button>
             <button onClick={scrollToHowWeWork} className={`block py-2 px-4 text-sm font-bold text-[${colors.white}] hover:bg-gray-800 w-full text-left`}>CUM LUCRĂM</button>
