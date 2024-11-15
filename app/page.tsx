@@ -27,6 +27,20 @@ export default function Component() {
   const clientsRef = useRef(null)
 
   useEffect(() => {
+    const sectionId = window.location.hash.replace('#', ''); // Get section ID from URL hash
+    const sectionRef = {
+      home: homeRef,
+      about: aboutUsRef,
+      howWeWork: howWeWorkRef,
+      contact: contactRef,
+    }[sectionId];
+
+    if (sectionRef?.current) {
+      sectionRef.current.scrollIntoView({ behavior: 'smooth' });
+    }
+  }, []);
+
+  useEffect(() => {
     const handleResize = () => {
       setIsMobile(window.innerWidth < 768);
     };
@@ -136,7 +150,7 @@ export default function Component() {
 
   const colors = {
     orange: '#cb7536',
-    navy: '#061425',
+    navy: '#34353a',
     white: '#efddc5',
     black: '#061425',
     red: '#e05e3d'
@@ -300,7 +314,7 @@ export default function Component() {
         </section>
 
         {/* STATS SECTION */}
-        <section className="bg-[#061425] py-16 relative overflow-hidden" id="about" ref={aboutUsRef}>
+        <section className="bg-[#061425] py-16 relative overflow-hidden" id="aboutUs" ref={aboutUsRef}>
           <div className="container mx-auto px-4">
             <div className="flex flex-wrap justify-center items-stretch -mx-4">
               <div className="w-full sm:w-1/3 px-4 mb-8 sm:mb-0">
