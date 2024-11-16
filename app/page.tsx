@@ -381,7 +381,7 @@ export default function Component() {
         {/* CLIENTI */}
         <section ref={clientsRef} className="py-16 bg-white pt-40">
           <div className="container mx-auto px-4 mt-50" >
-            <h2 className="text-3xl md:text-4xl font-bold mb-12 text-black text-center font-archivo">CLIENȚII NOȘTRII</h2>
+            <h2 className="text-3xl md:text-4xl font-bold mb-12 text-black text-center font-archivo">CLIENȚII NOȘTRI</h2>
             <p className="text-xl text-center text-gray-600 mb-8">
               De la start-up-uri până la retaileri și branduri recunoscute la nivel global
             </p>
