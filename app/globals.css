@@ -34,3 +34,61 @@ body {
     --radius: 0.5rem;
   }
 }
+
+.marquee-container {
+  width: 100%;
+  overflow: hidden;
+}
+
+.marquee {
+  display: flex;
+  animation: marquee 25s linear infinite;
+}
+
+.marquee-item {
+  flex: 0 0 auto;
+  padding: 0 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+/* Add responsiveness for speed and sizing */
+@media (max-width: 640px) {
+  .marquee-item {
+    width: 50%;
+  }
+  .marquee {
+    animation-duration: 5s; /* Faster on mobile */
+  }
+}
+
+@media (min-width: 641px) and (max-width: 768px) {
+  .marquee-item {
+    width: 33.333%;
+  }
+  .marquee {
+    animation-duration: 10s; /* Slightly faster on tablets */
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  .marquee-item {
+    width: 25%;
+  }
+}
+
+@media (min-width: 1025px) {
+  .marquee-item {
+    width: 20%;
+  }
+}
