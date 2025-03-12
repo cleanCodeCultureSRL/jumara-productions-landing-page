@@ -54,7 +54,43 @@ export default function Header() {
               className={`absolute bottom-[-4px] left-0 w-full h-1 bg-[${colors.red}] transform transition-transform duration-300 ease-in-out scale-x-0 group-hover:scale-x-100`}
             />
           </Link>
-          {/* Additional navigation links can be added here in the future */}
+          <Link
+            href="/ce-facem"
+            className={`text-[${colors.white}] hover:text-[${colors.red}] font-bold flex items-center h-full relative group`}
+          >
+            CE FACEM
+            <span
+              className={`absolute bottom-[-4px] left-0 w-full h-1 bg-[${colors.red}] transform transition-transform duration-300 ease-in-out scale-x-0 group-hover:scale-x-100`}
+            />
+          </Link>
+          <Link
+            href="/how-we-work"
+            className={`text-[${colors.white}] hover:text-[${colors.red}] font-bold flex items-center h-full relative group`}
+          >
+            CUM O FACEM
+            <span
+              className={`absolute bottom-[-4px] left-0 w-full h-1 bg-[${colors.red}] transform transition-transform duration-300 ease-in-out scale-x-0 group-hover:scale-x-100`}
+            />
+          </Link>
+          <Link
+            href="/about-us"
+            className={`text-[${colors.white}] hover:text-[${colors.red}] font-bold flex items-center h-full relative group`}
+          >
+            ECHIPA
+            <span
+              className={`absolute bottom-[-4px] left-0 w-full h-1 bg-[${colors.red}] transform transition-transform duration-300 ease-in-out scale-x-0 group-hover:scale-x-100`}
+            />
+          </Link>
+
+          <Link
+            href="/contact"
+            className={`text-[${colors.white}] hover:text-[${colors.red}] font-bold flex items-center h-full relative group`}
+          >
+            CONTACT
+            <span
+              className={`absolute bottom-[-4px] left-0 w-full h-1 bg-[${colors.red}] transform transition-transform duration-300 ease-in-out scale-x-0 group-hover:scale-x-100`}
+            />
+          </Link>
         </nav>
         <button
           className="md:hidden p-2 text-white"
@@ -85,7 +121,34 @@ export default function Header() {
           >
             ACASĂ
           </Link>
-          {/* Additional mobile navigation links can be added here in the future */}
+          <Link
+            href="/how-we-work"
+            className={`block py-2 px-4 text-sm font-bold text-[${colors.white}] hover:bg-gray-800 w-full text-left`}
+            onClick={() => setIsMenuOpen(false)}
+          >
+            HOW WE WORK
+          </Link>
+          <Link
+            href="/about-us"
+            className={`block py-2 px-4 text-sm font-bold text-[${colors.white}] hover:bg-gray-800 w-full text-left`}
+            onClick={() => setIsMenuOpen(false)}
+          >
+            ABOUT US
+          </Link>
+          <Link
+            href="/services"
+            className={`block py-2 px-4 text-sm font-bold text-[${colors.white}] hover:bg-gray-800 w-full text-left`}
+            onClick={() => setIsMenuOpen(false)}
+          >
+            SERVICES
+          </Link>
+          <Link
+            href="/contact"
+            className={`block py-2 px-4 text-sm font-bold text-[${colors.white}] hover:bg-gray-800 w-full text-left`}
+            onClick={() => setIsMenuOpen(false)}
+          >
+            CONTACT
+          </Link>
         </div>
       )}
     </header>

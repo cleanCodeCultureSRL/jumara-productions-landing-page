@@ -9,6 +9,14 @@ import Clients from "@/components/clients";
 import Stats from "@/components/stats";
 import Hero from "@/components/hero";
 
+export const colors = {
+  orange: "#cb7536",
+  navy: "#061425",
+  white: "#efddc5",
+  black: "#061425",
+  red: "#e05e3d",
+};
+
 export default function Component() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [snackbar, setSnackbar] = useState(null);
@@ -86,14 +94,6 @@ export default function Component() {
     };
   }, [isMenuOpen]);
 
-  const colors = {
-    orange: "#cb7536",
-    navy: "#061425",
-    white: "#efddc5",
-    black: "#061425",
-    red: "#e05e3d",
-  };
-
   const closeSnackbar = () => setSnackbar(null);
 
   return (
@@ -155,7 +155,7 @@ export default function Component() {
           </svg>
         </div>
 
-        <Contact />
+        <Contact isHomePage={true} />
       </main>
 
       <Footer />

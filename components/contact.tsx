@@ -1,8 +1,11 @@
 "use client";
 
 import { useState } from "react";
+// import contact from "/contact.jpg";
+import Image from "next/image";
 
-export default function Contact() {
+export default function Contact({ isHomePage }) {
+  console.log(isHomePage);
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
@@ -33,35 +36,45 @@ export default function Contact() {
     }
   };
 
+  const textColor = isHomePage ? "text-[#061425]" : "text-white";
+  const backgroundColor = isHomePage ? "bg-white" : "transparent";
   return (
     <>
       <section
         id="contact"
-        className="bg-white py-16 relative overflow-hidden px-6"
+        className={`${textColor} ${backgroundColor} py-16 relative overflow-hidden px-6`}
       >
-        <div className="container mx-auto px-2">
+        {!isHomePage && (
+          <Image
+            src={"/contact.jpg"}
+            alt="Contact"
+            className="absolute inset-0 w-full h-full object-cover z-[-1] opacity-20"
+            fill
+          />
+        )}
+        <div className="container mx-auto px-2 z-10">
           <div className="flex flex-wrap -mx-4">
             <div className="w-full lg:w-1/4 px-4 mb-8 lg:mb-0">
-              <h2 className="text-3xl font-bold text-[#061425] mb-6">
+              <h2 className={`text-3xl font-bold mb-6 ${textColor}`}>
                 Contactează-ne
               </h2>
               <div className="mb-6">
-                <h3 className="text-xl font-semibold text-[#061425] mb-2">
+                <h3 className={`text-xl font-semibold mb-2 ${textColor}`}>
                   TELEFON
                 </h3>
-                <p className="text-[#061425]">+40 770 202 977</p>
+                <p className={textColor}>+40 770 202 977</p>
               </div>
               <div className="mb-6">
-                <h3 className="text-xl font-semibold text-[#061425] mb-2">
+                <h3 className={`text-xl font-semibold mb-2 ${textColor}`}>
                   EMAIL
                 </h3>
-                <p className="text-[#061425]">contact@imeravisual.ro</p>
+                <p className={textColor}>contact@imeravisual.ro</p>
               </div>
               <div className="mb-6">
-                <h3 className="text-xl font-semibold text-[#061425] mb-2">
+                <h3 className={`text-xl font-semibold mb-2 ${textColor}`}>
                   ADRESA
                 </h3>
-                <p className="text-[#061425]">
+                <p className={textColor}>
                   România,
                   <br />
                   București,
@@ -72,7 +85,7 @@ export default function Contact() {
             </div>
             <div className="w-px bg-gray-300 mx-4"></div>
             <div className="w-full lg:w-[calc(66.666667%-1rem)] px-4">
-              <h2 className="text-3xl font-bold text-[#061425] mb-6">
+              <h2 className={`text-3xl font-bold mb-6 ${textColor}`}>
                 Hai să vorbim
               </h2>
               <div className="w-full h-px bg-gray-300 mb-6"></div>
@@ -86,7 +99,7 @@ export default function Contact() {
                   <div className="w-full md:w-1/2 px-2 mb-4 md:mb-0">
                     <label
                       htmlFor="name"
-                      className="block text-[#061425] font-semibold mb-2"
+                      className={`block ${textColor} font-semibold mb-2`}
                     >
                       1. NUME
                     </label>
@@ -104,7 +117,7 @@ export default function Contact() {
                   <div className="w-full md:w-1/2 px-2">
                     <label
                       htmlFor="email"
-                      className="block text-[#061425] font-semibold mb-2"
+                      className={`block ${textColor} font-semibold mb-2`}
                     >
                       2. ADRESĂ DE EMAIL
                     </label>
@@ -124,7 +137,7 @@ export default function Contact() {
                   <div className="w-full md:w-1/2 px-2 mb-4 md:mb-0">
                     <label
                       htmlFor="company"
-                      className="block text-[#061425] font-semibold mb-2"
+                      className={`block ${textColor} font-semibold mb-2`}
                     >
                       3. DENUMIRE COMPANIE
                     </label>
@@ -142,7 +155,7 @@ export default function Contact() {
                   <div className="w-full md:w-1/2 px-2">
                     <label
                       htmlFor="enquiry"
-                      className="block text-[#061425] font-semibold mb-2"
+                      className={`block ${textColor} font-semibold mb-2`}
                     >
                       4. NUMĂR DE TELEFON
                     </label>
@@ -161,7 +174,7 @@ export default function Contact() {
                 <div className="mb-4">
                   <label
                     htmlFor="message"
-                    className="block text-[#061425] font-semibold mb-2"
+                    className={`block ${textColor} font-semibold mb-2`}
                   >
                     CUM TE PUTEM AJUTA?
                   </label>
