@@ -122,7 +122,7 @@ Cu o combinație unică de creativitate, expertiză tehnică și înțelegere a 
           <h2 className="text-4xl font-bold mb-12 text-center text-[#061425]">
             De ce să faci clipuri pe YouTube?
           </h2>
-          <div className="flex flex-col md:flex-row divide-y md:divide-y-0 md:divide-x divide-gray-300">
+          <div className="flex flex-col md:flex-row divide-y md:divide-y-0 md:divide-x divide-gray-300 min-h-[260px]">
             {benefits.map((benefit, index) => (
               <div key={index} className="flex-1 px-6 py-4">
                 <h3 className="text-xl font-bold mb-3">{benefit.title}</h3>

@@ -61,7 +61,7 @@ Indiferent dacă ai nevoie de un spot scurt pentru campaniile tale de social med
           <h2 className="text-4xl font-bold mb-12 text-center text-[#061425]">
             Abordarea Noastră
           </h2>
-          <div className="flex flex-col md:flex-row divide-y md:divide-y-0 md:divide-x divide-gray-300">
+          <div className="flex flex-col md:flex-row divide-y md:divide-y-0 md:divide-x divide-gray-300 min-h-[200px]">
             <div className="flex-1 px-6 py-4">
               <h3 className="text-xl font-bold mb-3">Storytelling Autentic</h3>
               <TypewriterText
@@ -103,7 +103,7 @@ Indiferent dacă ai nevoie de un spot scurt pentru campaniile tale de social med
       <Portfolio
         title="PORTOFOLIU DE RECLAME"
         description="Iată câteva exemple de reclame video pe care le-am realizat pentru clienții noștri."
-        backgroundColor="bg-[#061425]"
+        // backgroundColor="bg-[#061425]"
       />
       <div className="relative h-24 overflow-hidden bg-[#061425]">
         <svg

@@ -47,7 +47,7 @@ const TypewriterText = ({ text, className = "" }: TypewriterTextProps) => {
   }, [isVisible, text]);
 
   return (
-    <div ref={textRef} className={`relative ${className}`}>
+    <div ref={textRef} className={`relative ${className} `}>
       <div>{displayText}</div>
 
       <div

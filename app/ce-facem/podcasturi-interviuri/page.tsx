@@ -90,7 +90,7 @@ Cu o combinație unică de creativitate, expertiză tehnică și înțelegere a 
           <h2 className="text-3xl font-bold mb-12 text-center">
             De ce să faci clipuri pe YouTube?
           </h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 min-h-[200px]">
             {benefits.map((benefit, index) => (
               <div key={index} className="bg-gray-50 p-6 rounded-lg shadow-sm">
                 <h3 className="text-xl font-bold mb-3">{benefit.title}</h3>
@@ -131,7 +131,7 @@ Cu o combinație unică de creativitate, expertiză tehnică și înțelegere a 
       </div>
 
       {/* FAQ Section */}
-      <FAQSection title="Întrebări Frecvente" items={faqItems} />
+      <FAQSection title="Întrebări Frecvente" faqs={faqItems} />
     </PageTemplate>
   );
 }

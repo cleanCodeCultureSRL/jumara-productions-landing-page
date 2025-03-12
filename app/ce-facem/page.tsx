@@ -5,7 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 
 // Service card component
-function ServiceCard({ title, image, slug, size = "normal" }) {
+export function ServiceCard({ title, image, slug, size = "normal" }) {
   return (
     <Link
       href={`/ce-facem/${slug}`}
@@ -31,34 +31,34 @@ function ServiceCard({ title, image, slug, size = "normal" }) {
   );
 }
 
+export const services = [
+  {
+    title: "VIDEO VERTICAL (TIKTOK/REELS)",
+    image: "/image.jpg",
+    slug: "video-vertical",
+    size: "small",
+  },
+  {
+    title: "YOUTUBE VIDEOS",
+    image: "/image.jpg",
+    slug: "youtube",
+    size: "normal",
+  },
+  {
+    title: "PODCASTURI/INTERVIURI",
+    image: "/image.jpg",
+    slug: "podcasturi-interviuri",
+    size: "normal",
+  },
+  {
+    title: "ADS",
+    image: "/image.jpg",
+    slug: "ads",
+    size: "small",
+  },
+];
 export default function ServicesPage() {
   // Service data
-  const services = [
-    {
-      title: "VIDEO VERTICAL (TIKTOK/REELS)",
-      image: "/image.jpg",
-      slug: "video-vertical",
-      size: "small",
-    },
-    {
-      title: "YOUTUBE VIDEOS",
-      image: "/image.jpg",
-      slug: "youtube",
-      size: "normal",
-    },
-    {
-      title: "PODCASTURI/INTERVIURI",
-      image: "/image.jpg",
-      slug: "podcasturi-interviuri",
-      size: "normal",
-    },
-    {
-      title: "ADS",
-      image: "/image.jpg",
-      slug: "ads",
-      size: "small",
-    },
-  ];
 
   return (
     <PageTemplate

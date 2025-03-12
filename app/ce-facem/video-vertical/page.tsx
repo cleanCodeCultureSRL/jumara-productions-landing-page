@@ -99,7 +99,7 @@ Nu ești sigur că suntem potriviți? Dă-ne un e-mail și hai să vedem împreu
           <h2 className="text-4xl font-bold mb-12 text-center text-[#061425]">
             Beneficiile Videoclipurilor Verticale
           </h2>
-          <div className="flex flex-col md:flex-row divide-y md:divide-y-0 md:divide-x divide-gray-300">
+          <div className="flex flex-col md:flex-row divide-y md:divide-y-0 md:divide-x divide-gray-300 min-h-[200px]">
             {benefits.map((benefit, index) => (
               <div key={index} className="flex-1 px-6 py-4">
                 <h3 className="text-xl font-bold mb-3">{benefit.title}</h3>
@@ -125,7 +125,7 @@ Nu ești sigur că suntem potriviți? Dă-ne un e-mail și hai să vedem împreu
       <Portfolio
         title="CLIPURI PORTOFOLIU"
         description="Poți să vezi mai jos ce clipuri video verticale am mai făcut în trecut."
-        vertical={true}
+        // vertical={true}
         videoSrc="/heroVideoMobile.mp4"
       />
       <div className="relative h-24 overflow-hidden bg-[#061425]">
