@@ -4,6 +4,8 @@ import PageTemplate from "@/components/template";
 import FAQSection, { FAQItem } from "@/components/faq-section";
 import Image from "next/image";
 import { colors } from "@/app/page";
+import TypewriterText from "@/components/typewriter";
+import Portfolio from "@/components/portfolio";
 
 export default function AdsPage() {
   // FAQ items for Social Ads
@@ -62,31 +64,28 @@ Indiferent dacă ai nevoie de un spot scurt pentru campaniile tale de social med
           <div className="flex flex-col md:flex-row divide-y md:divide-y-0 md:divide-x divide-gray-300">
             <div className="flex-1 px-6 py-4">
               <h3 className="text-xl font-bold mb-3">Storytelling Autentic</h3>
-              <p className="text-gray-700">
-                Transformăm mesajele de marketing în povești autentice care
-                rezonează cu audiența ta și creează o conexiune emoțională
-                durabilă.
-              </p>
+              <TypewriterText
+                text="Transformăm mesajele de marketing în povești autentice care rezonează cu audiența ta și creează o conexiune emoțională durabilă."
+                className="text-gray-700"
+              />
             </div>
             <div className="flex-1 px-6 py-4">
               <h3 className="text-xl font-bold mb-3">
                 Producție de Înaltă Calitate
               </h3>
-              <p className="text-gray-700">
-                Utilizăm echipamente profesionale și tehnici avansate de
-                producție pentru a asigura că reclamele tale arată impecabil și
-                se remarcă prin calitate.
-              </p>
+              <TypewriterText
+                text="Utilizăm echipamente profesionale și tehnici avansate de producție pentru a asigura că reclamele tale arată impecabil și se remarcă prin calitate."
+                className="text-gray-700"
+              />
             </div>
             <div className="flex-1 px-6 py-4">
               <h3 className="text-xl font-bold mb-3">
                 Optimizare pentru Platforme
               </h3>
-              <p className="text-gray-700">
-                Adaptăm fiecare reclamă în funcție de platforma pe care va rula,
-                ținând cont de specificațiile tehnice și comportamentul
-                utilizatorilor.
-              </p>
+              <TypewriterText
+                text="Adaptăm fiecare reclamă în funcție de platforma pe care va rula, ținând cont de specificațiile tehnice și comportamentul utilizatorilor."
+                className="text-gray-700"
+              />
             </div>
           </div>
         </div>
@@ -101,41 +100,11 @@ Indiferent dacă ai nevoie de un spot scurt pentru campaniile tale de social med
         </svg>
       </div>
       {/* Portfolio section */}
-      <section className="py-16 bg-[#061425] text-white">
-        <div className="container mx-auto px-6">
-          <h2 className="text-3xl font-bold mb-12 text-center">
-            PORTOFOLIU DE RECLAME
-          </h2>
-          <p className="text-center mb-8">
-            Iată câteva exemple de reclame video pe care le-am realizat pentru
-            clienții noștri.
-          </p>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {[1, 2, 3].map((number) => (
-              <div
-                key={number}
-                className="aspect-video relative bg-gray-800 rounded-lg overflow-hidden group"
-              >
-                <video
-                  src="/heroVideo.mp4"
-                  className="w-full h-full object-cover transition-opacity duration-300 opacity-40 group-hover:opacity-100"
-                  muted
-                  loop
-                  playsInline
-                  onMouseEnter={(e) => e.currentTarget.play()}
-                  onMouseLeave={(e) => {
-                    e.currentTarget.pause();
-                    e.currentTarget.currentTime = 0;
-                  }}
-                />
-                <span className="absolute inset-0 flex items-center justify-center text-[15rem] md:text-[20rem] font-bold text-white opacity-70 transition-opacity duration-300 group-hover:opacity-0 pointer-events-none">
-                  {number}
-                </span>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+      <Portfolio
+        title="PORTOFOLIU DE RECLAME"
+        description="Iată câteva exemple de reclame video pe care le-am realizat pentru clienții noștri."
+        backgroundColor="bg-[#061425]"
+      />
       <div className="relative h-24 overflow-hidden bg-[#061425]">
         <svg
           viewBox="0 0 500 150"

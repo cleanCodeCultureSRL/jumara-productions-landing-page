@@ -3,53 +3,8 @@
 import { useEffect, useRef, useState } from "react";
 import PageTemplate from "@/components/template";
 import FAQSection, { FAQItem } from "@/components/faq-section";
-
-// Add this new component for the typewriter effect
-const TypewriterText = ({ text, className = "" }) => {
-  const [displayText, setDisplayText] = useState("");
-  const [isVisible, setIsVisible] = useState(false);
-  const textRef = useRef(null);
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setIsVisible(true);
-          observer.disconnect();
-        }
-      },
-      { threshold: 0.1 }
-    );
-
-    if (textRef.current) {
-      observer.observe(textRef.current);
-    }
-
-    return () => observer.disconnect();
-  }, []);
-
-  useEffect(() => {
-    if (!isVisible) return;
-
-    let currentIndex = 0;
-    const timer = setInterval(() => {
-      if (currentIndex <= text.length) {
-        setDisplayText(text.substring(0, currentIndex));
-        currentIndex++;
-      } else {
-        clearInterval(timer);
-      }
-    }, 10); // Adjust typing speed here
-
-    return () => clearInterval(timer);
-  }, [isVisible, text]);
-
-  return (
-    <div ref={textRef} className={className}>
-      {displayText}
-    </div>
-  );
-};
+import TypewriterText from "@/components/typewriter";
+import Portfolio from "@/components/portfolio";
 
 export default function VideoVerticalPage() {
   // FAQ items for TikTok/Vertical video
@@ -166,42 +121,13 @@ Nu ești sigur că suntem potriviți? Dă-ne un e-mail și hai să vedem împreu
           <path d="M0,0 L0,50 Q250,150 500,50 L500,0 Z" fill="white" />
         </svg>
       </div>
-      {/* Portfolio section - placeholder */}
-      <section className="py-16 bg-gray-900 text-white">
-        <div className="container mx-auto px-6">
-          <h2 className="text-3xl font-bold mb-12 text-center">
-            CLIPURI PORTOFOLIU
-          </h2>
-          <p className="text-center mb-8">
-            Poți să vezi mai jos ce clipuri video verticale am mai făcut în
-            trecut.
-          </p>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {[1, 2, 3].map((number) => (
-              <div
-                key={number}
-                className="aspect-[9/16] relative bg-gray-800 rounded-lg overflow-hidden group"
-              >
-                <video
-                  src="/heroVideoMobile.mp4"
-                  className="w-full h-full object-cover transition-opacity duration-300 opacity-40 group-hover:opacity-100"
-                  muted
-                  loop
-                  playsInline
-                  onMouseEnter={(e) => e.currentTarget.play()}
-                  onMouseLeave={(e) => {
-                    e.currentTarget.pause();
-                    e.currentTarget.currentTime = 0;
-                  }}
-                />
-                <span className="absolute inset-0 flex items-center justify-center text-[20rem] md:text-[25rem] font-bold text-white opacity-70 transition-opacity duration-300 group-hover:opacity-0 pointer-events-none">
-                  {number}
-                </span>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+      {/* Portfolio section */}
+      <Portfolio
+        title="CLIPURI PORTOFOLIU"
+        description="Poți să vezi mai jos ce clipuri video verticale am mai făcut în trecut."
+        vertical={true}
+        videoSrc="/heroVideoMobile.mp4"
+      />
       <div className="relative h-24 overflow-hidden bg-[#061425]">
         <svg
           viewBox="0 0 500 150"

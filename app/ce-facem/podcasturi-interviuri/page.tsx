@@ -3,6 +3,8 @@
 import PageTemplate from "@/components/template";
 import FAQSection, { FAQItem } from "@/components/faq-section";
 import Image from "next/image";
+import TypewriterText from "@/components/typewriter";
+import Portfolio from "@/components/portfolio";
 
 export default function PodcasturiInterviuriPage() {
   // FAQ items for YouTube videos
@@ -92,12 +94,44 @@ Cu o combinație unică de creativitate, expertiză tehnică și înțelegere a 
             {benefits.map((benefit, index) => (
               <div key={index} className="bg-gray-50 p-6 rounded-lg shadow-sm">
                 <h3 className="text-xl font-bold mb-3">{benefit.title}</h3>
-                <p className="text-gray-700">{benefit.description}</p>
+                <TypewriterText
+                  text={benefit.description}
+                  className="text-gray-700"
+                />
               </div>
             ))}
           </div>
         </div>
       </section>
+
+      <div className="relative h-24 overflow-hidden bg-[#061425]">
+        <svg
+          viewBox="0 0 500 150"
+          preserveAspectRatio="none"
+          className="h-full w-full"
+        >
+          <path d="M0,0 L0,50 Q250,150 500,50 L500,0 Z" fill="white" />
+        </svg>
+      </div>
+
+      {/* Portfolio section */}
+      <Portfolio
+        title="PORTOFOLIU PODCASTURI ȘI INTERVIURI"
+        description="Iată câteva exemple de podcasturi și interviuri pe care le-am realizat pentru clienții noștri."
+      />
+
+      <div className="relative h-24 overflow-hidden bg-[#061425]">
+        <svg
+          viewBox="0 0 500 150"
+          preserveAspectRatio="none"
+          className="h-full w-full"
+        >
+          <path d="M0,150 L0,100 Q250,0 500,100 L500,150 Z" fill="white" />
+        </svg>
+      </div>
+
+      {/* FAQ Section */}
+      <FAQSection title="Întrebări Frecvente" items={faqItems} />
     </PageTemplate>
   );
 }

@@ -5,13 +5,15 @@ import Image from "next/image";
 import Link from "next/link";
 
 // Service card component
-function ServiceCard({ title, image, slug }) {
+function ServiceCard({ title, image, slug, size = "normal" }) {
   return (
     <Link
       href={`/ce-facem/${slug}`}
-      className="block group relative overflow-hidden rounded-lg shadow-lg transform transition-all duration-300 hover:-translate-y-2 hover:shadow-xl"
+      className={`block group relative overflow-hidden rounded-lg shadow-lg transform transition-all duration-300 hover:-translate-y-2 hover:shadow-xl ${
+        size === "small" ? "col-span-1" : "col-span-1 md:col-span-2"
+      }`}
     >
-      <div className="relative aspect-square w-full overflow-hidden rounded-lg">
+      <div className="relative h-64 w-full overflow-hidden rounded-lg">
         <Image
           src={image}
           alt={title}
@@ -36,22 +38,25 @@ export default function ServicesPage() {
       title: "VIDEO VERTICAL (TIKTOK/REELS)",
       image: "/image.jpg",
       slug: "video-vertical",
+      size: "small",
     },
     {
       title: "YOUTUBE VIDEOS",
       image: "/image.jpg",
       slug: "youtube",
-    },
-
-    {
-      title: "ADS",
-      image: "/image.jpg",
-      slug: "ads",
+      size: "normal",
     },
     {
       title: "PODCASTURI/INTERVIURI",
       image: "/image.jpg",
       slug: "podcasturi-interviuri",
+      size: "normal",
+    },
+    {
+      title: "ADS",
+      image: "/image.jpg",
+      slug: "ads",
+      size: "small",
     },
   ];
 
@@ -71,13 +76,14 @@ export default function ServicesPage() {
               <span className="absolute -bottom-2 left-0 w-full h-1 bg-red-600"></span>
             </span>
           </h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+          <div className="grid grid-cols-2 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
             {services.map((service, index) => (
               <ServiceCard
                 key={index}
                 title={service.title}
                 image={service.image}
                 slug={service.slug}
+                size={service.size}
               />
             ))}
           </div>
