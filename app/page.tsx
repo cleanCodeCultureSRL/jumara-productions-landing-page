@@ -468,7 +468,7 @@ export default function Component() {
                 </div>
                 <div className="mb-6">
                   <h3 className="text-xl font-semibold text-[#061425] mb-2">EMAIL</h3>
-                  <p className="text-[#061425]">contact@imeravisual.ro</p>
+                  <p className="text-[#061425]">contact@jumaraproductions.ro</p>
                 </div>
                 <div className="mb-6">
                   <h3 className="text-xl font-semibold text-[#061425] mb-2">ADRESA</h3>
