@@ -1,17 +1,6 @@
 "use client";
 
-import {
-  Eye,
-  Facebook,
-  Film,
-  Heart,
-  Instagram,
-  Lightbulb,
-  Rocket,
-  Telescope,
-  Users,
-  Video,
-} from "lucide-react";
+import { Facebook, Heart, Instagram } from "lucide-react";
 import Image from "next/image";
 
 export default function Footer() {

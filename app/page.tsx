@@ -72,13 +72,14 @@ export default function Component() {
       { threshold: 0.1 }
     )
 
-    if (clientsRef.current) {
-      observer.observe(clientsRef.current)
+    const element = clientsRef.current
+    if (element) {
+      observer.observe(element)
     }
 
     return () => {
-      if (clientsRef.current) {
-        observer.unobserve(clientsRef.current)
+      if (element) {
+        observer.unobserve(element)
       }
     }
   }, [])

@@ -91,9 +91,12 @@ const Stats = forwardRef<
         className="bg-[#061425] py-16 relative overflow-hidden"
         id="aboutUs"
         ref={(el) => {
-          if (aboutUsRef) aboutUsRef.current = el;
+          if (aboutUsRef)
+            (aboutUsRef as React.MutableRefObject<HTMLElement | null>).current =
+              el;
           if (typeof ref === "function") ref(el);
-          else if (ref) ref.current = el;
+          else if (ref)
+            (ref as React.MutableRefObject<HTMLElement | null>).current = el;
         }}
       >
         <div className="container mx-auto px-4">
