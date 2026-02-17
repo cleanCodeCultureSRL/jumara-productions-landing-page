@@ -68,7 +68,7 @@ export default function Contact({ isHomePage }) {
                 <h3 className={`text-xl font-semibold mb-2 ${textColor}`}>
                   EMAIL
                 </h3>
-                <p className={textColor}>contact@imeravisual.ro</p>
+                <p className={textColor}>contact@jumaraproductions.ro</p>
               </div>
               <div className="mb-6">
                 <h3 className={`text-xl font-semibold mb-2 ${textColor}`}>
