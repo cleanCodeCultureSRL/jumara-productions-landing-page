@@ -18,7 +18,7 @@ export async function POST(req: Request) {
       service: "gmail",
       auth: {
         user: "Contact@jumaraproductions.ro",
-        pass: "sydb luti ekqk zpcs",
+        pass: "utst pomc cpqu ibdu",
       },
     });
 
